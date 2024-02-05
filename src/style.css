@@ -1,0 +1,237 @@
+/* 
+.marque {
+    /* margin-top: 0%; */
+    /* position: absolute;
+} */
+
+h1 {
+    margin: 30px;
+    padding: 1px;
+    color: rgb(6, 63, 6);
+}
+
+/* ************************************navbr*************************** */
+.logo {
+    margin-top: -3%;
+    height: 70px;
+}
+
+.d2 {
+    /* border: 1px solid; */
+    height: 74px;
+    width: 99.9%;
+    /* margin-top: 1%; */
+    /* background: linear-gradient(74deg, rgba(255, 255, 255, 0.9612219887955182) 0%, rgba(181, 221, 184, 1) 26%, rgba(15, 94, 18, 1) 52%, rgba(5, 52, 7, 1) 82%); */
+}
+
+.navlinks{
+
+color: rgb(13, 59, 13);
+text-shadow: 1px 0.1px green;
+margin: 1px;
+padding: 5px;
+border-radius: 10px;
+background-color: rgba(189, 224, 189, 0.151);
+}
+
+.navlinks:hover{
+
+    color: white;
+    text-shadow: 1px 0.1px green;
+    
+    margin: 1px;
+    padding: 5px;
+    padding-left: 2px;
+    border-radius: 10px;
+    background-color:rgb(4, 68, 4);
+    }
+.d22 {
+    color: white;
+    margin-top: 0.1%;
+    background-image: url(./resources/bgnav.jpg);
+    background-position: cover;
+    background-repeat: repeat;
+    /* background-color: rgb(4, 68, 4); */
+    height: 80px;
+    padding: 0%;
+    margin-bottom: -1%;
+    justify-content: center;
+    text-Align: center
+}
+
+
+
+.drop {
+    color: white;
+}
+
+.color {
+    color: black;
+}
+
+.btn {
+
+    background-color: rgb(1, 43, 1);
+    color: white;
+    border: 1px solid white;
+    padding-left: 1%;
+    margin: 1%;
+}
+
+.btn:hover {
+
+    background-color: rgb(255, 255, 255);
+    color: rgb(1, 43, 1);
+    text-decoration: solid;
+}
+
+
+/* universal */
+* {
+    /* background-color: rgb(198, 219, 198); */
+    background-origin: padding-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+/* footercss */
+
+.footerdiv1 {
+
+    background-color: rgb(3, 82, 3);
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.div1 {
+    border: 1px solid white;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row
+}
+
+
+.div2 {
+    border: 1px solid white;
+    flex-grow: 25;
+}
+
+
+
+.img1 {
+    background-color: white;
+    border: 1px solid green;
+    border-radius: 12px;
+    height: 100px;
+    margin: 1%;
+    padding: 1%;
+}
+
+/* ***************************************************login page************************************************************************************* */
+.logdiv {
+    margin-bottom: 5%;
+    margin-top: 5%;
+    width: 420px;
+    height: auto;
+    padding: 20px;
+    border-radius: 20px;
+    border-style: double;
+    border: 2px solid darkgreen;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+
+.loginbtn{
+    padding: 8px;
+     margin: 1px;
+      position: relative; top: 10%; bottom: 10%; width: 150px
+}
+
+.loginbtn:hover{
+    padding: 8px;
+     margin: 1.1px;
+    
+      position: relative;
+      top: 10%;
+       bottom: 10%;
+        width: 150px;
+        background-color: #fff;
+        border: 1px solid darkgreen;
+      
+}
+
+
+.about1{
+    border: 2px solid darkgreen;
+    height: auto;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    align-items:'center';
+    margin: 1%; 
+    color: rgb(4, 43, 4);
+    background-color: rgba(173, 247, 173, 0.329)
+}
+
+.about2{
+    border: 2px solid darkgreen;
+    height: auto;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    align-items:'center';
+    margin: 1%; 
+    color: rgb(4, 43, 4);
+    background-color: rgba(173, 247, 173, 0.329)
+}
+.maindiv{
+    display: flex;
+    
+    /* flex-direction: row; */
+
+}
+
+.ddiv{
+    /* border: 1px solid; */
+    /* background-color: red; */
+    height: auto;
+    width: 99%;
+    margin: 1%;
+}
+
+.ddiv2{
+    /* border: 1px solid; */
+    /* background-color: yellow; */
+    /* height: 28%; */
+    margin: 2px;
+    padding: 10%;
+    /* justify-content: center;
+    flex-direction:column;
+    display:inline-block;
+    display:table; */
+    /* display: flex; */
+}
+
+
+.contact{
+    flex-direction:column;
+    margin:auto;
+    /* width: 20px; */
+    margin-top: 5%;
+    height: 190px;
+    /* position: -ms-page; */
+    /* height:20px */
+}
+
+.img{
+    height: 100px;
+}
+
+.img:hover{
+    height: 105px;
+    animation-duration: 100ms;
+    transition: 1ms;
+
+}

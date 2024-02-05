@@ -1,0 +1,337 @@
+<button onClick={()=>
+        {
+            let str = "Select e.EMP_Code, e.Emp_Name,e.Salary,d.detail as DPT from empinfo e inner join tbl_depart d on e.dpt_id =  d.id"
+            Axios.get ("http://localhost:3001/api/DataQuery",
+            {params:{sql:str}}
+            ).then (
+                (res)=>
+                {
+                   setMyData( res.data )
+                }
+            )
+        }
+    }   
+    style={{width:'100px', margin:'10px',padding:'10px'}}>Read</button>
+
+
+<div>
+        {myData.map ((item) => <>
+        
+        <div style={{display:'flex'}}>
+        <Alert variant='primary' style={{width:'100px', margin:'5px'}}>{item.EMP_Code}</Alert>
+        <Alert variant='primary' style={{width:'250px', margin:'5px'}}>{item.Emp_Name}</Alert>
+        <Alert variant='warning' style={{width:'150px', margin:'5px'}}>{item.Salary}</Alert>
+        <Alert variant='primary' style={{width:'200px', margin:'5px'}}>{item.DPT}</Alert>
+
+
+        {/* <span> {item.Emp_Code} </span>
+        <span> {item.Emp_Name} </span>
+        <span> {item.Salary} </span>
+        <span> {item.DPT} </span>
+         */}
+        
+        </div>
+         </>) }
+
+    </div>
+
+import { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Alert from 'react-bootstrap/Alert';
+import Form from 'react-bootstrap/Form';
+
+
+
+
+
+
+
+
+function MyFile7() {
+     
+    const [chk1,setChk1] = useState(true);
+    const [chk2,setChk2] = useState(true);
+    const [chk3,setChk3] = useState(true);
+    const [chkList,setchkList] = useState([]);
+    
+    const handle1= () => {
+        setChk1(!chk1)
+        if (chk1) 
+            chkList.push ('Python')
+        else
+            chkList.pop('Python')
+    }
+
+    const handle2= () => {
+        setChk2(!chk2)
+        if (chk2) 
+            chkList.push ('Java')
+        else
+            chkList.pop('Java')
+    }
+
+    const handle3= () => {
+        setChk3(!chk3)
+        if (chk3) 
+            chkList.push ('C++')
+        else
+            chkList.pop('C++')
+    }
+
+    const updateList = ()=>{
+        // setchkList([])
+        if (chk1) 
+            chkList.push ('Python')
+        if (chk2) 
+            chkList.push ('Java')
+        if (chk3) 
+            chkList.push ('C++')
+        
+    }
+return ( <>
+    <h1>test 7</h1>
+    <Alert variant='primary'></Alert>
+    <div>
+
+    <input type = 'checkbox' value = 'py' onClick={handle1}></input>
+    <input type = 'checkbox' value = 'js' onClick={handle2}></input>
+    <input type = 'checkbox' value = 'c+' onClick={handle3}></input>
+        
+    </div>
+    
+    <div>
+        {
+            chkList.map(
+                (itm) => 
+                <div>
+                    {itm}
+                </div>
+            )
+        }
+    </div>
+    </> );
+}   
+
+export default MyFile7;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import { Form, Col } from 'react-bootstrap';
+// import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from './1footer';
+import NavB from './1navbar';
+import { useState } from 'react';
+import Empty from './1empty';
+
+
+function Sign(props) {
+
+
+
+    const [u_id, setu_id] = useState('');
+    const [u_name, setu_name] = useState('');
+    const [u_f_name, setu_f_name] = useState('');
+    const [u_nic, setu_nic] = useState('');
+    const [u_ph_no, setu_ph_no] = useState('');
+    const [u_age, setu_age] = useState('');
+    const [u_ender, setu_gender] = useState('');
+
+    const [u_city, setu_city] = useState('');
+    const [u_email, setu_email] = useState('');
+    const [u_pswd, setu_pswd] = useState('');
+
+    
+    return (<>
+
+        <NavB></NavB>
+
+        <Form className='logdiv'>
+
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Control type="text" placeholder="Enter Your Name" onChange={(x) => { setu_name(x.target.value) }} />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Control type="text" placeholder="Father's Name " onChange={(x) => { setu_f_name(x.target.value) }} />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Control type="text" placeholder="Enter CNIC Number" onChange={(x) => { setu_nic(x.target.value) }} />
+                <label>without gap </label>
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Control type="text" placeholder="Enter Phone Number" onChange={(x) => { setu_ph_no(x.target.value) }} />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Control type="email" placeholder="Enter Age" onChange={(x) => { setu_age(x.target.value) }} />
+            </Form.Group>
+
+<Form.Group>
+    <Empty></Empty>
+</Form.Group>
+            <div>
+                <input type="radio" value="Male" name="gender" /> Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" value="Female" name="gender" /> Female&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" value="Other" name="gender" /> Other
+            </div>
+
+    
+
+
+
+
+
+
+
+
+
+
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Control type="email" placeholder="Enter email" onChange={(x) => { setu_email(x.target.value) }} />
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Control type="password" placeholder="Password" onChange={(x) => { setu_pswd(x.target.value) }} />
+            </Form.Group>
+
+            {/* <Form.Group className="mb-3" controlId="formBasicCheckbox"><Form.Check type="checkbox" label="Check me out" /></Form.Group> */}
+
+            <center><Button className='loginbtn'>Log in</Button></center>
+
+        </Form>
+        <Footer></Footer>
+
+    </>);
+}
+
+export default Sign;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import News from "./1news";
+import React, { useState } from 'react';
+
+
+function Empty() {
+
+    const provinces = ['Sindh', 'Punjab', 'Baluchistan', 'KPK', 'Other'];
+    const cities = {
+        Sindh: ['Karachi', 'Hyderabad', 'Jamshoro'],
+        Punjab: ['Lahore', 'Multan', 'Bhawalpur'],
+        Baluchistan: ['Hub', 'Gawadar', 'Queetta'],
+        KPK: ['Peshawar', 'Abotabad', 'Sawat'],
+        Other: ['Gilgit', 'Baltistan', 'Kashmir', 'Islamabad'],
+    };
+  
+    // State to store selected values
+    const [selectedState, setSelectedState] = useState('');
+    const [selectedCity, setSelectedCity] = useState('');
+  
+    // Event handler for state selection
+    const handleStateChange = (e) => {
+      const stateValue = e.target.value;
+      setSelectedState(stateValue);
+      // Reset selected city when state changes
+      setSelectedCity('');
+    };
+  
+    // Event handler for city selection
+    const handleCityChange = (e) => {
+      const cityValue = e.target.value;
+      setSelectedCity(cityValue);
+    };
+
+
+
+return ( <>
+
+
+<div>
+      <label htmlFor="stateDropdown">Select a Province:</label>
+      <select id="stateDropdown" onChange={handleStateChange} value={selectedState}>
+        <option value="">Select a state</option>
+        {provinces.map((state) => (
+          <option key={state} value={state}>
+            {state}
+          </option>
+        ))}
+      </select>
+
+      {selectedState && (
+        <div>
+          <label htmlFor="cityDropdown">Select a City:</label>
+          <select id="cityDropdown" onChange={handleCityChange} value={selectedCity}>
+            <option value="">Select a city</option>
+            {cities[selectedState].map((city) => (
+              <option key={city} value={city}>
+                {city}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
+    </div>
+
+
+
+
+        </> );
+}
+
+export default Empty;
